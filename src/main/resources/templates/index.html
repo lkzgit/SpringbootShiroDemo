@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.thymeleaf.org/thymeleaf-extras-shiro">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<h3 th:text="${name}"></h3>
+<!--shiro:hasPermisson="user:toadd" shiro:hasPermisson="user:toupdate"-->
+<div shiro:hasPermisson="user:toadd"> 用户添加 <a href="toadd">添加页面</a></div>
+</br>
+<div shiro:hasPermisson="user:toupdate">用户更新<a href="toupdate">更新页面</a></div>
+</br>
+<a href="/user/tologin">登录</a>
+</body>
+</html>
