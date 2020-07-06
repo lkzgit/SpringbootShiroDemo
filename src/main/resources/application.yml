@@ -9,7 +9,7 @@ spring:
   redis:
     database: 01
     host: 119.45.115.231
-    password: IJPay
+    password:
     port: 6379
     timeout: 5000d
     lettuce:

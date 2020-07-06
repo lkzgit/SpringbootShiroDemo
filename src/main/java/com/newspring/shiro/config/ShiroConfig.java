@@ -16,7 +16,11 @@ import java.util.Map;
 @Configuration
 public class ShiroConfig {
 
-    //创建ShiroFilterFactoryBean()
+    /**
+     * 创建ShiroFilterFactoryBean()
+     * 创建过滤拦截
+     */
+
     @Bean
     public ShiroFilterFactoryBean getShiroFilterFactoryBean(@Qualifier("securityManager") DefaultWebSecurityManager securityManager) {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
@@ -62,7 +66,10 @@ public class ShiroConfig {
         return shiroFilterFactoryBean;
     }
 
-    //创建DefaultWebSecurityManager
+    /*
+    创建DefaultWebSecurityManager
+    关联realm
+     */
     @Bean(name = "securityManager")
     public DefaultWebSecurityManager getDefaultWebSecurityManager(@Qualifier("userRealm") UserRealm userRealm) {
 
@@ -72,7 +79,9 @@ public class ShiroConfig {
         return securityManager;
     }
 
-    //创建一个Realm对象,
+    /*
+    创建一个Realm对象, shiro 连接数据库的桥梁
+     */
     @Bean("userRealm")
     public UserRealm getRealm() {
         return new UserRealm();

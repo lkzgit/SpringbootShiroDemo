@@ -1,6 +1,5 @@
 package com.newspring.shiro.controller;
 
-import org.hibernate.tool.schema.internal.exec.ScriptTargetOutputToFile;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,6 +32,11 @@ public class TemController {
         return "user/update";
     }
 
+    /**
+     * 测试文件通过流展示页面
+     * @param request
+     * @param response
+     */
     @RequestMapping(value = "/findFile", method = RequestMethod.GET)
     public void findFile(HttpServletRequest request, HttpServletResponse response) {
 
